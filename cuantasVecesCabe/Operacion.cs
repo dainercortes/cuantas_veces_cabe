@@ -14,13 +14,38 @@ namespace cuantasVecesCabe
 
         public void Datos()
         {
-            Console.WriteLine("Por favor ingrese el primer número mayor a 1000 y el segundo menor a 100");
-            
-            Console.Write("\nNumero 1: ");
-            num1 = Convert.ToInt32(Console.ReadLine());
-            
-            Console.Write("\nNumero 2: ");
-            num2 = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Por favor ingrese el primer número mayor a 1000 y el segundo menor a 100");
+
+                do
+                {                            
+                    Console.Write("\nNumero 1: ");
+                    num1 = Convert.ToInt32(Console.ReadLine());
+
+                    if (num1 < 1000)
+                    {
+                        Console.WriteLine("\nNúmero incorrecto vuelva a intentar");
+                    }
+
+                } while (num1 < 1000);
+
+                do
+                {
+                    Console.Write("\nNumero 2: ");
+                    num2 = Convert.ToInt32(Console.ReadLine());
+
+                    if (num2 > 100)
+                    {
+                        Console.WriteLine("\nNúmero incorrecto vuelva a intentar");
+                    }
+
+                } while (num2 > 100);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }                
         }
 
         public int Calculo() 
