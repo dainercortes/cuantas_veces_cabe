@@ -8,18 +8,16 @@ namespace cuantasVecesCabe
 {
     internal class Operacion
     {
-        private int num1 { get; set; } = 0;
-        private int num2 { get; set; } = 0;
-        private int resultado { get; set; } = 0;
+        private int num1 = 0;
+        private int num2 = 0;
+        private int resultado = 0;
 
-        public void Datos()
+        public void setNum1 ()
         {
             try
             {
-                Console.WriteLine("Por favor ingrese el primer número mayor a 1000 y el segundo menor a 100");
-
                 do
-                {                            
+                {
                     Console.Write("\nNumero 1: ");
                     num1 = Convert.ToInt32(Console.ReadLine());
 
@@ -29,7 +27,18 @@ namespace cuantasVecesCabe
                     }
 
                 } while (num1 < 1000);
+            }
+            catch (Exception ex)
+            {
 
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public void setNum2 ()
+        {
+            try
+            {
                 do
                 {
                     Console.Write("\nNumero 2: ");
@@ -44,8 +53,9 @@ namespace cuantasVecesCabe
             }
             catch (Exception ex)
             {
+
                 Console.WriteLine(ex.Message);
-            }                
+            }
         }
 
         public int Calculo() 
